@@ -45,3 +45,18 @@ Route::prefix("wechat")->group(function(){
     Route::post("del","wechat\login@del")->middleware("login");//素材删除接口
 });
 
+
+
+
+
+
+
+
+Route::prefix("sign")->group(function(){
+    Route::get("encrypt","Sign\SignController@encrypt");//密文传输
+    Route::post("decrypt","Sign\SignController@decrypt")->middleware("sign");//密文传输
+    Route::post("login","Sign\SignController@login");//登录
+    Route::get("user","Sign\SignController@user_info");//修改信息
+
+});
+
